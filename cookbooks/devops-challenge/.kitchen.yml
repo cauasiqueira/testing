@@ -1,0 +1,51 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: avenue-code
+  region: sa-east-1
+  vpc_id: vpc-0f6e7a6b
+  security_group_ids: ["sg-10795177"]
+  require_chef_omnibus: true
+  instance_type: t2.micro
+  subnet_id: subnet-0231ba65
+  shared_credentials_profile: avenue-code
+
+transport:
+  ssh_key: ~/.ssh/avenue-code.pem
+  connection_timeout: 10
+  connection_retries: 5
+  username: admin
+
+provisioner:
+  name: chef_solo
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-16.04
+  - name: centos-7.2
+  - name: debian-8
+
+suites:
+  - name: default
+    run_list:
+      - recipe[devops-challenge::default]
+    verifier:
+      inspec_tests:
+        - test/recipes
+    attributes:
+  - name: install
+    run_list:
+      - recipe[devops-challenge::install]
+    verifier:
+      inspec_tests:
+        - test/recipes
+    attributes:
+  - name: config
+    run_list:
+      - recipe[devops-challenge::config]
+    verifier:
+      inspec_tests:
+        - test/recipes
+    attributes:
