@@ -3,6 +3,7 @@ driver:
   name: ec2
   aws_ssh_key_id: avenue-code
   region: sa-east-1
+  image_id: ami-e9423985
   vpc_id: vpc-0f6e7a6b
   security_group_ids: ["sg-10795177"]
   require_chef_omnibus: true
