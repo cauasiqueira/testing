@@ -12,7 +12,7 @@ driver:
   shared_credentials_profile: avenue-code
 
 transport:
-  ssh_key: ~/.ssh/avenue-code.pem
+  ssh_key: /Users/caua/Downloads/avenue-code.pem
   connection_timeout: 10
   connection_retries: 5
   username: admin
