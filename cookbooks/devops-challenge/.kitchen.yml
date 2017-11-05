@@ -30,19 +30,7 @@ suites:
   - name: default
     run_list:
       - recipe[devops-challenge::default]
-    verifier:
-      inspec_tests:
-        - test/recipes
-    attributes:
-  - name: install
-    run_list:
       - recipe[devops-challenge::install]
-    verifier:
-      inspec_tests:
-        - test/recipes
-    attributes:
-  - name: config
-    run_list:
       - recipe[devops-challenge::config]
     verifier:
       inspec_tests:
