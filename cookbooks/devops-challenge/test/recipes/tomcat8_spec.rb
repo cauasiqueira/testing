@@ -6,6 +6,14 @@ describe port(8080) do
   it { should be_listening }
 end
 
+describe service('tomcat8') do
+  it { should be_enabled }
+end
+
+describe service('tomcat8') do
+  it { should be_running }
+end
+
 describe file('/var/lib/tomcat8/webapps/java-chef-test.war') do
   it { should exist }
 end
