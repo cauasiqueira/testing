@@ -1,6 +1,6 @@
 name 'devops-challenge'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Cauã Siqueira Carulli'
+maintainer_email 'caua.siqueira@protonmail.com'
 license 'all_rights'
 description 'Installs/Configures devops-challenge'
 long_description 'Installs/Configures devops-challenge'
